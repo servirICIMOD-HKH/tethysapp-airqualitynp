@@ -1,0 +1,16 @@
+*.pydevproject
+*.project
+*.egg-info
+*.class
+*.pyo
+*.pyc
+*.db
+*.sqlite
+*.DS_Store
+.idea/
+services.yml
+tethysapp/airqualitynp/vairqualitynp/node_modules/
+build/
+dist/
+tethysapp/airqualitynp/workspaces/app_workspace/MapImage/
+tethysapp/airqualitynp/__pycache__/
