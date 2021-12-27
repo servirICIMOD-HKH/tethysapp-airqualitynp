@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar navbar-light template-nabar full-height">
-    <a class="navbar-brand" href="">Air Quality Watch - HKH</a>
+    <a class="navbar-brand" href="">Air Quality Watch - Nepal</a>
     <div class="nav-logo-image">
-      <img class="logo-image-style" src="@/assets/logo-icimod.png" alt="">
+      <img class="logo-image-style" src="@/assets/nepalLogo.jpg" alt="">
     </div>
   </nav>
 </template>
@@ -69,7 +69,12 @@ a {
 
 .nav-logo-image {
   margin-right: 15px;
-  margin-top: 9px;
+  margin-top: 0px;
+  height: inherit;
+}
+
+.logo-image-style {
+  height: 49px;
 }
 
 </style>

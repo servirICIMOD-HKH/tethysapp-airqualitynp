@@ -34,5 +34,4 @@ export let Action = {
     SlicedFromCatalog: 'apps/airqualitynp/slicedfromcatalog/',
     TimeSeriesRasterQuery: 'apps/airqualitynp/timeseriesmodeldata/',
 
-
 };

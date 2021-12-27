@@ -474,18 +474,18 @@ export default {
 
         if (this.mapControlVariable.data_period == "Recent") {
           this.mapControlVariable.location_by_pollutant_value1 = [1, 12, 6];
-          this.mapControlVariable.location_by_pollutant_value2 = [1, 12, 4];
-          this.mapControlVariable.location_by_pollutant_value3 = [1, 12, 2];
-          this.mapControlVariable.location_by_pollutant_value4 = [1, 12, 8];
+          this.mapControlVariable.location_by_pollutant_value2 = [1, 12, 7];
+          this.mapControlVariable.location_by_pollutant_value3 = [1, 11, 9];
+          this.mapControlVariable.location_by_pollutant_value4 = [1, 11, 14];
         } else if (this.mapControlVariable.data_period == "Archive") {
 
 
           this.mapControlVariable.location_by = 'default_locations';
           this.mapControlVariable.default_location = 1;
           this.mapControlVariable.location_by_pollutant_value1 = [1, 12, 6];
-          this.mapControlVariable.location_by_pollutant_value2 = [1, 12, 4];
-          this.mapControlVariable.location_by_pollutant_value3 = [1, 12, 2];
-          this.mapControlVariable.location_by_pollutant_value4 = [1, 12, 8];
+          this.mapControlVariable.location_by_pollutant_value2 = [1, 12, 7];
+          this.mapControlVariable.location_by_pollutant_value3 = [1, 11, 9];
+          this.mapControlVariable.location_by_pollutant_value4 = [1, 11, 14];
         } else {
           this.mapControlVariable.location_by = 'default_locations';
           this.mapControlVariable.default_location = 1;

@@ -104,7 +104,7 @@ export default {
       let view = new View({
         center: [9388155.512006583, 3291367.8109067543],
         zoom: 4,
-        extent: [6702855.884774126, 1769255.1930753174, 12194542.852403797, 4812621.833531793]
+        extent: [8890696.26351159, 3015412.0211580014, 9868004.289064337, 3590809.349811837]
       });
       let ScaleControl = new ScaleLine({
             units: 'metric'
@@ -127,7 +127,7 @@ export default {
             element: document.getElementById('layerSwitcherDiv')
           })
       );
-      map.getView().fit([6702855.884774126, 1769255.1930753174, 12194542.852403797, 4812621.833531793], map.getView());
+      map.getView().fit([8890696.26351159, 3015412.0211580014, 9868004.289064337, 3590809.349811837], map.getView());
       this.setMapObject(this.mapObject);
     },
     changeInventory() {

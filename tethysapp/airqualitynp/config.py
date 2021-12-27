@@ -17,7 +17,8 @@ initilizationData = {
     'regionOrCountryId': 7
 }
 
-DataDirLocation = '/home/suman/ThreddsDataServerDataset/AirQualityData'
+# DataDirLocation = '/home/suman/ThreddsDataServerDataset/AirQualityData'
+DataDirLocation = '/smogdata01/cron_AirQuality_Data'
 
 
 DBUser = 'suman'

@@ -13,7 +13,6 @@ module.exports = {
             config.entry('airqualitynp')
                 .add('./src/airqualitynp.js')
                 .end()
-
             config.module.rule('fonts').use('url-loader')
                 .loader('file-loader') // replaces the url-loader
                 .tap(options => Object.assign(options, {

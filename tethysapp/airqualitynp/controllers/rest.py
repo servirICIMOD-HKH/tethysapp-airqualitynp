@@ -8,7 +8,7 @@ from sqlalchemy.pool import NullPool
 from sqlalchemy.orm import sessionmaker
 from ..config import DataBaseConnectionStrURL
 import traceback
-from ..model import MajorCity
+from ..model import MajorCity,NepalCity
 import ast
 
 
@@ -23,7 +23,7 @@ def getCityData(request):
     status = 0
 
     try:
-        AeronetDataQuery = session.query(MajorCity).all()
+        AeronetDataQuery = session.query(NepalCity).all()
         for i in AeronetDataQuery:
             geoJSONCur = {
                 'type': 'FeatureCollection',

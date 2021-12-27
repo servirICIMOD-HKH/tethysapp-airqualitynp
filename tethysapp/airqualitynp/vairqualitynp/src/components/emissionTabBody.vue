@@ -101,4 +101,7 @@ export default {
 .full-height {
   height: 100%;
 }
+.second-row div{
+  /*height: calc(100% - 12.5px);*/
+}
 </style>

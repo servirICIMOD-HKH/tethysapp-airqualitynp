@@ -1115,9 +1115,9 @@ myApp.LayerCollectionObjet = {
 };
 
 myApp.DefaultSations = {
-    aeronetAOD: [2, 5, 13, 6],
-    pm2p5Embassy: [6, 4, 2, 8],
-    o3Embassy: [6, 4, 7, 8]
+    aeronetAOD: [9, 14, 9, 14],
+    pm2p5Embassy: [6, 7, 6, 7],
+    o3Embassy: [6, 7, 6, 7]
 }
 
 myApp.cascaderObject = {

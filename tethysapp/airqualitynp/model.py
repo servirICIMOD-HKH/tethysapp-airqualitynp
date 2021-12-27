@@ -37,6 +37,16 @@ class MajorCity(Base):
     cities = Column(String(50))
     geom = Column(Geometry('POINT', 4326), index=True)
 
+
+class NepalCity(Base):
+    __tablename__ = 'nepal_cities'
+    __table_args__ = {'schema': 'public'}
+
+    gid = Column(Integer, primary_key=True, server_default=text("nextval('\"public\".nepal_cities_gid_seq'::regclass)"))
+    id = Column(Integer)
+    cities = Column(String(50))
+    geom = Column(Geometry('POINT', 4326), index=True)
+
 class ApwatchLayergroupone(Base):
     __tablename__ = 'apwatch_layergroupone'
     __table_args__ = {'schema': 'public'}

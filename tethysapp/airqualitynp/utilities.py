@@ -85,6 +85,11 @@ def getGeoJSONSofOnetations(StationObjectString,ModelClassDataListStr,typeName,S
     # Get connection/session to database
     NewEngine = create_engine(DataBaseConnectionStrURL, poolclass=NullPool)
     session = sessionmaker(bind=NewEngine)()
+    stationIDList=[]
+    if(StationObjectString=="AeronetAod"):
+        stationIDList = [9, 14]
+    elif(StationObjectString=="UsEmbassyPm"):
+        stationIDList = [6, 7]
 
     GeojsonObject3857 = {
         'type': 'FeatureCollection',
@@ -108,6 +113,7 @@ def getGeoJSONSofOnetations(StationObjectString,ModelClassDataListStr,typeName,S
             AeronetDataQuery = session.query(ModelObject).filter(ModelObject.country_id==int(rid))
         for i in AeronetDataQuery:
             stID=i.st_id
+
             TimeseriesData = session.query(ModelClassDataList).filter(
                 ModelClassDataList.st_id == int(stID),
                 ModelClassDataList.type == typeName,
@@ -117,22 +123,24 @@ def getGeoJSONSofOnetations(StationObjectString,ModelClassDataListStr,typeName,S
 
             # updated
             # if(TimeseriesData.count()):
-            featureObject = {
-                'type': 'Feature',
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [-87.650175, 41.850385]
-                },
-                'properties': {
+
+            if stID in stationIDList:
+                featureObject = {
+                    'type': 'Feature',
+                    'geometry': {
+                        'type': 'Point',
+                        'coordinates': [-87.650175, 41.850385]
+                    },
+                    'properties': {
+                    }
                 }
-            }
-            geoJSONstr = session.query(func.ST_AsGeoJSON(func.ST_Transform(i.geom, 3857)))[0][0]
-            geoJSON = ast.literal_eval(str(geoJSONstr))
-            featureObject['geometry']['coordinates'] = geoJSON["coordinates"]
-            featureObject['properties']['folder_name'] = i.folder_name
-            featureObject['properties']['id'] = i.st_id
-            featureObject['properties']['name'] = i.name
-            GeojsonObject3857['features'].append(featureObject)
+                geoJSONstr = session.query(func.ST_AsGeoJSON(func.ST_Transform(i.geom, 3857)))[0][0]
+                geoJSON = ast.literal_eval(str(geoJSONstr))
+                featureObject['geometry']['coordinates'] = geoJSON["coordinates"]
+                featureObject['properties']['folder_name'] = i.folder_name
+                featureObject['properties']['id'] = i.st_id
+                featureObject['properties']['name'] = i.name
+                GeojsonObject3857['features'].append(featureObject)
         session.close()
     except:
         traceback.print_exc()
